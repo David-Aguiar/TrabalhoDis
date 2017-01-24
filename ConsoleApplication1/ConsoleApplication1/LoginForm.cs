@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Drawing;
+using System.ComponentModel;
 
 namespace ConsoleApplication1
 {
@@ -44,6 +46,9 @@ namespace ConsoleApplication1
             if (count == 1)
             {
                 MessageBox.Show("Login Successful!");
+                MainFormStudent f2 = new MainFormStudent();
+                this.Hide();
+                f2.Show();
             }
             else
             {
@@ -55,11 +60,32 @@ namespace ConsoleApplication1
         {
             Application.Exit();
         }
+        //private void LoginStateIcon_Click(object sender, EventArgs e)
+        //{
 
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+         //    if (LoginState.Conection_State() == true)
+         //    {
+         //        LoginStateIcon.Image = new Bitmap(Properties.Resources.On);
+         //        LoginStateIcon.SizeMode = PictureBoxSizeMode.StretchImage;
+         //    }
+         //    else
+         //    {
+         //        LoginStateIcon.Image = Properties.Resources.off;
+         //    }
+
+         //}
+
+        private void ILoginStateIcon(object sender, AsyncCompletedEventArgs e)
         {
+            if (LoginState.Conection_State() == true)
+            {
+                LoginStateIcon.Image = Properties.Resources.On;
 
+            }
+            else
+            {
+                LoginStateIcon.Image = Properties.Resources.off;
+            }
         }
-
     }
 }

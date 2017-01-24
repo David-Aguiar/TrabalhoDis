@@ -11,22 +11,19 @@ namespace ConsoleApplication1
 {
     class LoginState
     {
-        private static String State;
 
-        public static String Conection_State()
+        public static bool  Conection_State()
         {
 
-            if (Conection.sqlconnection.State != ConnectionState.Open)
-            {
-                State = "On";
-            }
+            //switch(Conection.sqlconnection.State != ConnectionState.Open)
+            //{
+            //    case true: State = true;
+            //        break;
+            //    case false: State = false;
+            //        break;
+            //}
 
-            else
-            {
-                State = "Off";
-            }
-
-            return State;
+            return Conection.sqlconnection.State == ConnectionState.Open;
 
         }
     }
