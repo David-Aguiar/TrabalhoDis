@@ -3,33 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Data;
+using System.Windows.Forms;
 
 namespace ConsoleApplication1
 {
     class LoginState
     {
-        #region Singleton - usage: LoginState.GetInstance()
+        private static String State;
 
-        private static readonly LoginState Instance = new LoginState();
-
-        static LoginState()
+        public static String Conection_State()
         {
-        }
 
-        private LoginState()
-        {
-        }
+            if (Conection.sqlconnection.State != ConnectionState.Open)
+            {
+                State = "On";
+            }
 
-        public static LoginState GetInstance()
-        {
-            return Instance;
-        }
+            else
+            {
+                State = "Off";
+            }
 
-        #endregion
+            return State;
 
-        public static void LoginUser()
-        {
-            LoginConection.CheckConection();
         }
     }
 }
