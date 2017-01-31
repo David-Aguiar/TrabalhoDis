@@ -13,7 +13,7 @@ namespace ConsoleApplication1
 	{
 		private MySqlConnection Conexao = new MySqlConnection("host=127.0.0.1; user=root; database=mydb");
 		
-		public ComunicaBD()
+		public  ComunicaBD()
 		{
 			try
 			{
@@ -40,12 +40,12 @@ namespace ConsoleApplication1
 		public DataTable Query(String query)
 		{
 			DataTable dataTable = new DataTable();
-			MySqlAdapter adapter;
+			MySqlDataAdapter adapter;
 			
 			try
 			{
 				MySqlCommand command = new MySqlCommand(query, Conexao);
-				adapter = new MySqlAdapter(command);
+				adapter = new MySqlDataAdapter(command);
 				adapter.Fill(dataTable);
 			}
 			catch(Exception e)

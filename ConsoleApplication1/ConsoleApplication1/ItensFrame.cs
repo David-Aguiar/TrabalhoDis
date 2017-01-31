@@ -19,7 +19,11 @@ namespace ConsoleApplication1
 
         private void ItensFrame_Load(object sender, EventArgs e)
         {
-
+            if(this.WindowState == FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+            this.Activate();
         }
 
     }
