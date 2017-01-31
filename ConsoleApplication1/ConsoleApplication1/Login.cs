@@ -41,6 +41,7 @@ namespace ConsoleApplication1
             sql.Parameters.AddWithValue("@email", email);
             sql.Parameters.AddWithValue("@password", password);
             Con.Open();
+            //sdasdasd
             result = ((int)sql.ExecuteScalar());
             MySqlDataAdapter adapt = new MySqlDataAdapter(sql);
             DataSet ds = new DataSet();
