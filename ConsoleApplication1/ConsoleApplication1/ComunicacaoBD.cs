@@ -36,6 +36,10 @@ namespace ConsoleApplication1
 			return BD.Query(query);
 		}
 		
+		public DataTable QueryInnerJoin(int id)
+		{
+			return BD.Query("Select disciplinas.nome From aluno_disciplinas inner join disciplinas Where aluno_disciplinas.Aluno_id = "+id+" and aluno_disciplinas.Disciplinas_id = disciplinas.id");	
+		}
 		
 	}
 }
