@@ -16,5 +16,24 @@ namespace ConsoleApplication1
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try { Conection.connect(); }
+            catch { }
+            if(LoginState.Conection_State() == true)
+            {
+                //Application.Run(new LoginForm());
+                LoginForm lf = new LoginForm();
+                this.Hide();
+                lf.Show();
+                //this.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Don't Exit Connection");
+            }
+        }
     }
 }

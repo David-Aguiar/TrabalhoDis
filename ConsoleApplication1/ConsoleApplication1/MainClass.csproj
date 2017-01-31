@@ -62,6 +62,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conection.cs" />
+    <Compile Include="ItensFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItensFrame.Designer.cs">
+      <DependentUpon>ItensFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs" />
     <Compile Include="LoginConection.cs" />
     <Compile Include="LoginState.cs" />
     <Compile Include="LoginForm.cs">
@@ -89,6 +96,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="utilites.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -106,6 +114,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ItensFrame.resx">
+      <DependentUpon>ItensFrame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

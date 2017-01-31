@@ -12,21 +12,19 @@ namespace ConsoleApplication1
 
     class  Conection
     {
-        public static MySqlConnection sqlconnection = new MySqlConnection("host=127.0.0.1; user=root; database=mydb");
 
-        public static ConnectionState Open { get; private set; }
+        public static MySqlConnection sqlconnection = new MySqlConnection("host=127.0.0.1; user=root; database=mydb");
 
         public static void connect()
         {
-            while (sqlconnection.State != Open)
+            try
             {
                 sqlconnection.Open();
             }
-            //try
-            //{
-            //    sqlconnection.Open();
-            //}
-            //catch { }
+            catch
+            {
+
+            }
 
         }
 
