@@ -36,4 +36,23 @@ namespace ConsoleApplication1
 				MessageBox.Show(e.Message, "Erro ao se desligar da base de dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
+		
+		public DataTable Query(String query)
+		{
+			DataTable dataTable = new DataTable();
+			MySqlAdapter adapter;
+			
+			try
+			{
+				MySqlCommand command = new MySqlCommand(query, Conexao);
+				adapter = new MySqlAdapter(command);
+				adapter.Fill(dataTable);
+			}
+			catch(Exception e)
+			{
+				MessageBox.Show(e.Message, "Erro ao executar query na base de dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(query, "Query passada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+			return dataTable;
+		}
 	}
