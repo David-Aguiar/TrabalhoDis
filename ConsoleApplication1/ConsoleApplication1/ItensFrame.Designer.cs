@@ -44,10 +44,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(556, 261);
             this.Controls.Add(this.label1);
             this.Name = "ItensFrame";
             this.Text = "ItensFrame";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.ItensFrame_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

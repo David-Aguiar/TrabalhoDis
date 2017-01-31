@@ -52,6 +52,7 @@ namespace ConsoleApplication1
         {
             MySqlConnection Con = new MySqlConnection("host=127.0.0.1; user=root; database=mydb");
             Con.Open();
+            //ComunicacaoBD.Instance
             MySqlCommand sql = new MySqlCommand("Select disciplinas.nome From aluno_disciplinas inner join disciplinas Where aluno_disciplinas.Aluno_id = @id and aluno_disciplinas.Disciplinas_id = disciplinas.id ", Con);
             //sql.CommandText = "Select disciplinas.nome FROM disciplinas WHERE disciplinas.id = 1 ";
             sql.Parameters.AddWithValue("@id", Login.iresult);
@@ -91,10 +92,10 @@ namespace ConsoleApplication1
             if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 getCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                isf.Show();
                 MessageBox.Show(ult.Igetpath);
-
             }
+            isf.MdiParent = this;
+            isf.Show();
         }
     }
     }

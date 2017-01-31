@@ -75,6 +75,7 @@
             this.Controls.Add(this.selectforder);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
+            this.IsMdiContainer = true;
             this.Name = "MainFormStudent";
             this.Text = "MainFormStudent";
             this.Load += new System.EventHandler(this.MainFormStudent_Load);

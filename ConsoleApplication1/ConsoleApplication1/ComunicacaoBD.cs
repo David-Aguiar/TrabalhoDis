@@ -10,7 +10,7 @@ using System.Data;
 namespace ConsoleApplication1
 {
 
-    public class Conection
+    public class ComunicacaoBD
     {
 		private static ComunicacaoBD instance;
 		
@@ -28,7 +28,7 @@ namespace ConsoleApplication1
 			}
 		}
 		
-		private ComunicaBD BD = new ComunicaBD();
+		private comunicaBD BD = new comunicaBD();
 		
 		
 		

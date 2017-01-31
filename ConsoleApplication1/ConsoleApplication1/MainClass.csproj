@@ -61,6 +61,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="comunicaBD.cs" />
+    <Compile Include="ComunicacaoBD.cs" />
     <Compile Include="Conection.cs" />
     <Compile Include="ItensFrame.cs">
       <SubType>Form</SubType>
