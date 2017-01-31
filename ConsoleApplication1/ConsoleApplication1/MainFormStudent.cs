@@ -50,16 +50,14 @@ namespace ConsoleApplication1
 
         private DataTable alunoInfo()
         {
-            //MySqlConnection Con = new MySqlConnection("host=127.0.0.1; user=root; database=mydb");
-            //Con.Open();
-            ComunicacaoBD.Instance.
-            //MySqlCommand sql = new MySqlCommand("Select disciplinas.nome From aluno_disciplinas inner join disciplinas Where aluno_disciplinas.Aluno_id = @id and aluno_disciplinas.Disciplinas_id = disciplinas.id ", Con);
-            //sql.CommandText = "Select disciplinas.nome FROM disciplinas WHERE disciplinas.id = 1 ";
+            MySqlConnection Con = new MySqlConnection("host=127.0.0.1; user=root; database=mydb");
+            Con.Open();
+            MySqlCommand sql = new MySqlCommand("Select disciplinas.nome From aluno_disciplinas inner join disciplinas Where aluno_disciplinas.Aluno_id = @id and aluno_disciplinas.Disciplinas_id = disciplinas.id ", Con);
+            //sql.CommandText = "Select disciplinas.nome From aluno_disciplinas inner join disciplinas Where aluno_disciplinas.Aluno_id = @id and aluno_disciplinas.Disciplinas_id = disciplinas.id ";
             sql.Parameters.AddWithValue("@id", Login.iresult);
-            //MySqlDataAdapter datapdater = new MySqlDataAdapter(sql);
-            //DataTable datatable = new DataTable();
-            //datapdater.Fill(datatable);
-            DataTable dt = ComunicaBD.
+            MySqlDataAdapter datapdater = new MySqlDataAdapter(sql);
+            DataTable datatable = new DataTable();
+            datapdater.Fill(datatable);
             MySqlDataReader reader = sql.ExecuteReader();
 
             while (reader.Read())

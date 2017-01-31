@@ -47,6 +47,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(556, 261);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ItensFrame";
             this.Text = "ItensFrame";
             this.TopMost = true;

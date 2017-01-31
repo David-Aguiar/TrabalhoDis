@@ -51,6 +51,7 @@ namespace ConsoleApplication1
             {
                 MessageBox.Show("Login Successful!");
                 MainFormStudent f2 = new MainFormStudent();
+                Console.WriteLine(result);
                 f2.Show();
 
             }
