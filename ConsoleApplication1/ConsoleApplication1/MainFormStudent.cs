@@ -45,28 +45,27 @@ namespace ConsoleApplication1
             dataGridView1.ColumnHeadersVisible = false;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.DataSource = alunoInfo();
+            dataGridView1.DataSource = ComunicacaoBD.Instance.QueryInnerJoin(Login.iresult);
         }
 
-        private DataTable alunoInfo()
-        {
-            MySqlConnection Con = new MySqlConnection("host=127.0.0.1; user=root; database=mydb");
-            Con.Open();
-            MySqlCommand sql = new MySqlCommand("Select disciplinas.nome From aluno_disciplinas inner join disciplinas Where aluno_disciplinas.Aluno_id = @id and aluno_disciplinas.Disciplinas_id = disciplinas.id ", Con);
-            //sql.CommandText = "Select disciplinas.nome From aluno_disciplinas inner join disciplinas Where aluno_disciplinas.Aluno_id = @id and aluno_disciplinas.Disciplinas_id = disciplinas.id ";
-            sql.Parameters.AddWithValue("@id", Login.iresult);
-            MySqlDataAdapter datapdater = new MySqlDataAdapter(sql);
-            DataTable datatable = new DataTable();
-            datapdater.Fill(datatable);
-            MySqlDataReader reader = sql.ExecuteReader();
+        //private void alunoInfo()
+        //{
+        //    //MySqlConnection Con = new MySqlConnection("host=127.0.0.1; user=root; database=mydb");
+        //    //Con.Open();
+        //    //MySqlCommand sql = new MySqlCommand("Select disciplinas.nome From aluno_disciplinas inner join disciplinas Where aluno_disciplinas.Aluno_id = @id and aluno_disciplinas.Disciplinas_id = disciplinas.id ", Con);
+        //    //MySqlDataAdapter datapdater = new MySqlDataAdapter(sql);
+        //    //DataTable datatable = new DataTable();
+        //    //datapdater.Fill(datatable);
+        //    ComunicacaoBD.Instance.QueryInnerJoin(Login.iresult);
+        //    //MySqlDataReader reader = sql.ExecuteReader();
 
-            while (reader.Read())
-            {
-                Console.WriteLine(reader.GetString(0));
-            }
-            Con.Close();
-            return datatable;
-        }
+        //    //while (reader.Read())
+        //    //{
+        //    //    Console.WriteLine(reader.GetString(0));
+        //    //}
+        //    //Con.Close();
+        //    //return datatable;
+        //}
         private void selectforder_Click(object sender, EventArgs e)
         {
                 FolderBrowserDialog fbd = new FolderBrowserDialog();
