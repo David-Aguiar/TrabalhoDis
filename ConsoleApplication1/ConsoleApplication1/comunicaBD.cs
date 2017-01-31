@@ -52,8 +52,7 @@ namespace ConsoleApplication1
             {
                 MessageBox.Show(e.Message, "Erro ao executar query na base de dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MessageBox.Show(query, "Query passada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            return dataTable;
-        }
-    }
-}
+			}
+			return dataTable;
+		}
+	}
