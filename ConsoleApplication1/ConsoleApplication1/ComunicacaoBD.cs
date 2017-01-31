@@ -31,7 +31,10 @@ namespace ConsoleApplication1
 		private ComunicaBD BD = new ComunicaBD();
 		
 		
-		
+		public DataTable NovaQuery(String query)
+		{
+			return BD.Query(query);
+		}
 		
 		
 	}
