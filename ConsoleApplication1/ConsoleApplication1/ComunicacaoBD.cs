@@ -28,7 +28,7 @@ namespace ConsoleApplication1
 			}
 		}
 		
-		private comunicaBD BD = new comunicaBD();
+		private ComunicaBD BD = new ComunicaBD();
 		
 		
 		

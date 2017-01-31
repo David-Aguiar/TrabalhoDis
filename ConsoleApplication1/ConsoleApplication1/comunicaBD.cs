@@ -9,7 +9,7 @@ using System.Data;
 
 namespace ConsoleApplication1
 {
-	public class comunicaBD
+	public class ComunicaBD
 	{
 		private MySqlConnection Conexao = new MySqlConnection("host=127.0.0.1; user=root; database=mydb");
 		
