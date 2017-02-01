@@ -59,23 +59,22 @@
             // selectforder
             // 
             this.selectforder.AutoSize = true;
-            this.selectforder.Location = new System.Drawing.Point(13, 12);
+            this.selectforder.Location = new System.Drawing.Point(12, 12);
             this.selectforder.Name = "selectforder";
             this.selectforder.Size = new System.Drawing.Size(105, 23);
             this.selectforder.TabIndex = 2;
             this.selectforder.Text = "Select Main Folder";
             this.selectforder.UseVisualStyleBackColor = true;
-            this.selectforder.Click += new System.EventHandler(this.selectforder_Click);
+            //this.selectforder.Click += new System.EventHandler(this.selectforder_Click);
             // 
             // MainFormStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 344);
-            this.Controls.Add(this.selectforder);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
-            this.IsMdiContainer = true;
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.selectforder);
             this.Name = "MainFormStudent";
             this.Text = "MainFormStudent";
             this.Load += new System.EventHandler(this.MainFormStudent_Load);

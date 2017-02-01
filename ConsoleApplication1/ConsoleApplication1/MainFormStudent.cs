@@ -9,9 +9,12 @@ namespace ConsoleApplication1
 {
     public partial class MainFormStudent : Form
     {
+        public static MainFormStudent Instance { get; private set; }
+
         public MainFormStudent()
         {
             InitializeComponent();
+            Instance = this;
         }
 
         private utilites ult = new utilites();
@@ -47,53 +50,33 @@ namespace ConsoleApplication1
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.DataSource = ComunicacaoBD.Instance.QueryInnerJoin(Login.iresult);
         }
-
-        //private void alunoInfo()
+        //private void selectforder_Click(object sender, EventArgs e)
         //{
-        //    //MySqlConnection Con = new MySqlConnection("host=127.0.0.1; user=root; database=mydb");
-        //    //Con.Open();
-        //    //MySqlCommand sql = new MySqlCommand("Select disciplinas.nome From aluno_disciplinas inner join disciplinas Where aluno_disciplinas.Aluno_id = @id and aluno_disciplinas.Disciplinas_id = disciplinas.id ", Con);
-        //    //MySqlDataAdapter datapdater = new MySqlDataAdapter(sql);
-        //    //DataTable datatable = new DataTable();
-        //    //datapdater.Fill(datatable);
-        //    ComunicacaoBD.Instance.QueryInnerJoin(Login.iresult);
-        //    //MySqlDataReader reader = sql.ExecuteReader();
-
-        //    //while (reader.Read())
-        //    //{
-        //    //    Console.WriteLine(reader.GetString(0));
-        //    //}
-        //    //Con.Close();
-        //    //return datatable;
+        //        FolderBrowserDialog fbd = new FolderBrowserDialog();
+        //        fbd.RootFolder = Environment.SpecialFolder.Desktop;
+        //        fbd.Description = "Selecione Pasta";
+        //        fbd.ShowNewFolderButton = true;
+        //    if (fbd.ShowDialog() == DialogResult.OK)
+        //    {
+        //        ult.Igetpath = fbd.SelectedPath;
+        //        MessageBox.Show(ult.Igetpath);
+        //    }
+        //    else
+        //    {
+        //        selectforder.Enabled = false;
+        //    }
         //}
-        private void selectforder_Click(object sender, EventArgs e)
-        {
-                FolderBrowserDialog fbd = new FolderBrowserDialog();
-                fbd.RootFolder = Environment.SpecialFolder.Desktop;
-                fbd.Description = "Selecione Pasta";
-                fbd.ShowNewFolderButton = true;
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                ult.Igetpath = fbd.SelectedPath;
-                MessageBox.Show(ult.Igetpath);
-            }
-            else
-            {
-                selectforder.Enabled = false;
-            }
-
-        }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ItensFrame isf = new ItensFrame();
+                   ItensFrame ifs = new ItensFrame(); 
             if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
-                getCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                MessageBox.Show(ult.Igetpath);
+                //getCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                ComunicacaoBD
+                ifs.Show();
+                this.Hide();
             }
-            isf.MdiParent = this;
-            isf.Show();
         }
     }
     }

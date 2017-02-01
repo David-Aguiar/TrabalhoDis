@@ -43,7 +43,7 @@ namespace ConsoleApplication1
 		
 		public DataTable QueryLogin(string email, string password)
 		{
-			return BD.Query("SELECT email, password FROM aluno WHERE email="+email+" AND passoword="+password+"");
+			return BD.Query("SELECT id, email, password FROM aluno WHERE email="+email+" AND password="+password+"");
 		}
 		
 	}

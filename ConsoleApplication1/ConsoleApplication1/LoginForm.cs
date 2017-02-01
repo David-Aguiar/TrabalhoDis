@@ -14,11 +14,8 @@ namespace ConsoleApplication1
         public LoginForm()
         {
             InitializeComponent();
-            //Conection.connect();
-            MainForm mf = new MainForm();
-            mf.Close();
-        }
 
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -27,17 +24,14 @@ namespace ConsoleApplication1
         private void button1_Click(object sender, EventArgs e)
         
         {
-            if (textBox1.Text == "" || textBox2.Text == "")
-            {
-                MessageBox.Show("Please provide UserName and Password");
-                return;
-            }
             Login.iemail = textBox1.Text;
             Login.ipassword = textBox2.Text;
             Login.LoginAluno();
+            MainFormStudent mfs = new MainFormStudent();
             this.Hide();
-            //this.Close();
+            mfs.Show();
         }
+    
 
         private void button2_Click(object sender, EventArgs e)
         {

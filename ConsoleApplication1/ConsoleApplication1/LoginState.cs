@@ -14,17 +14,7 @@ namespace ConsoleApplication1
 
         public static bool  Conection_State()
         {
-
-            //switch(Conection.sqlconnection.State != ConnectionState.Open)
-            //{
-            //    case true: State = true;
-            //        break;
-            //    case false: State = false;
-            //        break;
-            //}
-
             return Conection.sqlconnection.State == ConnectionState.Open;
-
         }
     }
 }
