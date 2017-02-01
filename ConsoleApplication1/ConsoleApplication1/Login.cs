@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data;
@@ -48,6 +48,9 @@ namespace ConsoleApplication1
             adapt.Fill(ds);
             Con.Close();
             int count = ds.Tables[0].Rows.Count;
+			
+			//DataTable DT = ComunicacaoBD.Instance.QueryLogin(email, password);
+			//count  = DT.Rows[0].Count;
             if (count == 1)
             {
                 MessageBox.Show("Login Successful!");
