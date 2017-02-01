@@ -18,11 +18,13 @@ namespace ConsoleApplication1
         }
 
         private utilites ult = new utilites();
+        private int results = 0;
 
         private static List<int> items = new List<int>();
 
         private static int resultadoId = 0;
-        private static string getCell;
+        private static string  getCell;
+        private static ItensFrame ifs = new ItensFrame();
 
         public static int IresultadoId
         {
@@ -49,6 +51,7 @@ namespace ConsoleApplication1
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.DataSource = ComunicacaoBD.Instance.QueryInnerJoin(Login.iresult);
+            dataGridView1.Columns[1].Visible = false;        
         }
         //private void selectforder_Click(object sender, EventArgs e)
         //{
@@ -69,15 +72,15 @@ namespace ConsoleApplication1
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-                   ItensFrame ifs = new ItensFrame(); 
             if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
-                //getCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                ComunicacaoBD
+                getCell = dataGridView1.CurrentRow.Cells["id"].Value.ToString();
+                Console.Write(getCell);
                 ifs.Show();
                 this.Hide();
             }
         }
+
     }
     }
 

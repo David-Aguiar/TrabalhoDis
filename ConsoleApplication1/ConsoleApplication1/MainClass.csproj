@@ -64,6 +64,7 @@
     <Compile Include="comunicaBD.cs" />
     <Compile Include="ComunicacaoBD.cs" />
     <Compile Include="Conection.cs" />
+    <Compile Include="getUtilities.cs" />
     <Compile Include="ItensFrame.cs">
       <SubType>Form</SubType>
     </Compile>

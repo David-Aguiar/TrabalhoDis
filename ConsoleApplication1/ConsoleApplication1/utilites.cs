@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,27 +8,30 @@ using System.Windows.Forms;
 
 namespace ConsoleApplication1
 {
-    class utilites
+    public class utilites
     {
-        private string SqlString, disciplinaquery, getpath;
-
-
-        public string getSqlConnection
+        private string Inicialpath = @"D:\Documents\Nova pasta";
+        public utilites()
         {
-            get { return SqlString; }
-            set { SqlString = "host=127.0.0.1; user=root; database=mydb"; }
+            try
+            {
+                if (!Directory.Exists(Inicialpath))
+                {
+                    Directory.CreateDirectory(Inicialpath);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Problema ao criar a pasta");
+            }
         }
-
-        public string getdisciplinaquery
+        public void directoryaluno(int IdAluno ,string disciplinaNome )
         {
-            get { return disciplinaquery; }
-            set { disciplinaquery = "SELECT `disciplinas`.`nome` FROM `disciplinas`, `aluno` WHERE `aluno`.`id`=`disciplinas`.`id`"; }
-        }
-
-        public string Igetpath
-        {
-            get { return getpath; }
-            set { getpath = value; }
+            if (!Directory.Exists(Inicialpath + "\\"+ IdAluno + disciplinaNome))
+            {
+                Directory.CreateDirectory(Inicialpath + "\\" + IdAluno + disciplinaNome);
+            }
+            
         }
 
 }
