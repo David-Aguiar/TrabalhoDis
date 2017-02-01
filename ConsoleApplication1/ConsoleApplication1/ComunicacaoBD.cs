@@ -46,5 +46,10 @@ namespace ConsoleApplication1
 			return BD.Query("SELECT id, email, password FROM aluno WHERE email="+email+" AND password="+password+"");
 		}
 		
+		public DataTable QueryGeral(String tabela, String coluna, int id)
+		{
+			return BD.Query("SELECT "+coluna+" FROM "+tabela+" WHERE ID="+id);
+		}
+		
 	}
 }
