@@ -35,10 +35,10 @@ namespace ConsoleApplication1
             }
 
             DataTable DT = ComunicacaoBD.Instance.QueryLogin(email, password);
-            result = DT.Rows[0].Field<Int32>("id");
             count = DT.Rows.Count;
             if (count == 1)
             {
+                result = DT.Rows[0].Field<Int32>("id");
                 MessageBox.Show("Login Successful!");
             }
             else

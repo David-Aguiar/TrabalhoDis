@@ -10,8 +10,9 @@ namespace ConsoleApplication1
 {
     public class utilites
     {
-        private static bool CheckCreateDirectory = false;
-        private string Inicialpath = @"D:\Documents\Nova pasta";
+        //private static bool CheckCreateDirectory = false;
+        private string Inicialpath = @"D:\Documents\Nova pasta\";
+        private string getPath;
 
         public utilites()
         {
@@ -28,18 +29,25 @@ namespace ConsoleApplication1
             }
         }
         
-        public bool CheckDirectory(int IdAluno, string IdisciplinaNome)
-        {
-            if (!File.Exists(Inicialpath + "\\" + IdAluno + "\\" + IdisciplinaNome))
-            {
-                CheckCreateDirectory = true;
+        //public bool CheckDirectory(string IPath)
+        //{
+        //    if (!File.Exists(IPath))
+        //    {
+        //        CheckCreateDirectory = true;
 
-            }
-            else
+        //    }
+        //    else
+        //    {
+        //        CheckCreateDirectory = false;
+        //    }
+        //    return CheckCreateDirectory;
+        //}
+        public void IgetPath(string _IdAluno)
+        {
+            if (!Directory.Exists(Inicialpath+_IdAluno)== true)
             {
-                CheckCreateDirectory = false;
+                Directory.CreateDirectory(Inicialpath+_IdAluno);
             }
-            return CheckCreateDirectory;
         }
 
     }

@@ -10,9 +10,8 @@ namespace ConsoleApplication1
 {
     class getUtilities
     {
-        private static bool Icheck;
         private static getUtilities instance;
-        public string Inicialpath { get; }
+        public string Inicialpath { get; private set; }
         private getUtilities() { }
         public static getUtilities Instance
         {
@@ -28,16 +27,9 @@ namespace ConsoleApplication1
 
         private utilites ult = new utilites();
 
-        public void IcreateDirectory(int idaluno, string disciplinaNome)
+        public void IcreateDirectory(string aluno)
         {
-            if(ult.CheckDirectory(idaluno, disciplinaNome) == false)
-            {
-                Directory.CreatsubDirectory("asda");
-            }
-            else
-            {
-                MessageBox.Show("Foi creado");
-            }
+            ult.IgetPath(aluno);
         }
     }
 }

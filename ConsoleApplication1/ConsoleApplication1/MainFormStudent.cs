@@ -35,6 +35,8 @@ namespace ConsoleApplication1
             set { getCell = value; }
         }
 
+        public string Inicialpath { get; private set; }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -72,9 +74,7 @@ namespace ConsoleApplication1
             if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 getCell = dataGridView1.CurrentRow.Cells["id"].Value.ToString();
-                Console.Write(getCell);
-                //getUtilities.Instance.IcreateDirectory(IresultadoId, getCell);
-                getUtilities.Instance.
+                getUtilities.Instance.IcreateDirectory(getCell);
                 ifs.Show();
                 this.Hide();
             }
