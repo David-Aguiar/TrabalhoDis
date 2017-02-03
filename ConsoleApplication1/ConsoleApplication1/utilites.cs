@@ -10,7 +10,9 @@ namespace ConsoleApplication1
 {
     public class utilites
     {
+        private static bool CheckCreateDirectory = false;
         private string Inicialpath = @"D:\Documents\Nova pasta";
+
         public utilites()
         {
             try
@@ -25,14 +27,20 @@ namespace ConsoleApplication1
                 MessageBox.Show("Problema ao criar a pasta");
             }
         }
-        public void directoryaluno(int IdAluno ,string disciplinaNome )
+        
+        public bool CheckDirectory(int IdAluno, string IdisciplinaNome)
         {
-            if (!Directory.Exists(Inicialpath + "\\"+ IdAluno + disciplinaNome))
+            if (!File.Exists(Inicialpath + "\\" + IdAluno + "\\" + IdisciplinaNome))
             {
-                Directory.CreateDirectory(Inicialpath + "\\" + IdAluno + disciplinaNome);
+                CheckCreateDirectory = true;
+
             }
-            
+            else
+            {
+                CheckCreateDirectory = false;
+            }
+            return CheckCreateDirectory;
         }
 
-}
+    }
 }

@@ -14,13 +14,10 @@ namespace ConsoleApplication1
         public MainFormStudent()
         {
             InitializeComponent();
-            Instance = this;
         }
 
         private utilites ult = new utilites();
-        private int results = 0;
 
-        private static List<int> items = new List<int>();
 
         private static int resultadoId = 0;
         private static string  getCell;
@@ -76,6 +73,8 @@ namespace ConsoleApplication1
             {
                 getCell = dataGridView1.CurrentRow.Cells["id"].Value.ToString();
                 Console.Write(getCell);
+                //getUtilities.Instance.IcreateDirectory(IresultadoId, getCell);
+                getUtilities.Instance.
                 ifs.Show();
                 this.Hide();
             }
