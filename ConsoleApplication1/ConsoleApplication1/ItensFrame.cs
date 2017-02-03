@@ -27,7 +27,6 @@ namespace ConsoleApplication1
         {
             mfs.Show();
             this.Hide();
-            this.Close();
 
         }
     }
