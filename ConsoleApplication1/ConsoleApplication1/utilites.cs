@@ -11,7 +11,7 @@ namespace ConsoleApplication1
     public class utilites
     {
         //private static bool CheckCreateDirectory = false;
-        private string Inicialpath = @"D:\Documents\Nova pasta\";
+        private string Inicialpath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments)+"/NovaPasta/";
         private string getPath;
 
         public utilites()
@@ -47,6 +47,7 @@ namespace ConsoleApplication1
             if (!Directory.Exists(Inicialpath+_IdAluno)== true)
             {
                 Directory.CreateDirectory(Inicialpath+_IdAluno);
+                
             }
         }
 
