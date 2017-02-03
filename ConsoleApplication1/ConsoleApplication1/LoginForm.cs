@@ -14,6 +14,7 @@ namespace ConsoleApplication1
         public LoginForm()
         {
             InitializeComponent();
+            getUtilities.Instance()
 
         }
 

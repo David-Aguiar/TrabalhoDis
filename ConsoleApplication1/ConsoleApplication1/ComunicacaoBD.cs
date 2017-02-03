@@ -38,18 +38,18 @@ namespace ConsoleApplication1
 		
 		public DataTable QueryInnerJoin(int id)
 		{
-			return BD.Query("Select disciplinas.nome, disciplinas.id From aluno_disciplinas inner join disciplinas Where aluno_disciplinas.Aluno_id = " + id+" and aluno_disciplinas.Disciplinas_id = disciplinas.id");	
+			return BD.Query("Select disciplinas.nome, disciplinas.id From utilizador_disciplinas inner join disciplinas Where utilizador_disciplinas.utilizador_id = " +id+" and utilizador_disciplinas.disciplinas_id = disciplinas.id");	
 		}
 		
 		public DataTable QueryLogin(string email, string password)
 		{
-			return BD.Query("SELECT id, email, password FROM aluno WHERE email="+email+" AND password="+password+"");
+			return BD.Query("SELECT id, email, password, tipo_utilizador_id FROM utilizador WHERE email='"+email+"' AND password='"+password+"'");
 		}
 		
-		public DataTable QueryGeral(String tabela, String coluna, int id)
-		{
-			return BD.Query("SELECT "+coluna+" FROM "+tabela+" WHERE ID="+id);
-		}
+		//public DataTable QueryGeral(String tabela, String coluna, int id)
+		//{
+		//	return BD.Query("SELECT "+coluna+" FROM "+tabela+" WHERE ID="+id);
+		//}
 		
 	}
 }
