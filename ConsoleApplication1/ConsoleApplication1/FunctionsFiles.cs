@@ -38,7 +38,23 @@ namespace ConsoleApplication1
         public void Store(string file, string _Iddisciplina, int _Idaluno)
         {
             string destination = utilites._Inicialpath + _Iddisciplina + "/" + _Idaluno;
-            File.Copy(file, Path.Combine(destination, Path.GetFileName(file)));
+            if (!File.Exists(destination + "/" + Path.GetFileName(file)))
+            {
+                File.Copy(file, Path.Combine(destination, Path.GetFileName(file)));
+            }
+        }
+
+        public bool Exists(string file, string _Iddisciplina, int _Idaluno)
+        {
+            string destination = utilites._Inicialpath + _Iddisciplina + "/" + _Idaluno;
+            if (File.Exists(destination + "/" + Path.GetFileName(file)))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
