@@ -42,7 +42,6 @@ namespace ConsoleApplication1
             this.Hide();
             LoginForm lf = new LoginForm();
             lf.Show();
-            this.Close();
         }
         private void MainFormStudent_Load(object sender, EventArgs e)
         {
@@ -59,9 +58,9 @@ namespace ConsoleApplication1
             if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 getCell = dataGridView1.CurrentRow.Cells["id"].Value.ToString();
-                getUtilities.Instance.IcreateDirectory(getCell);
-                ifs.ShowDialog();
+                getUtilities.Instance.IcreateDirectory(getCell, Login.iresult);
                 this.Hide();
+                ifs.ShowDialog(this);
             }
         }
 

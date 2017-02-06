@@ -26,9 +26,9 @@ namespace ConsoleApplication1
         }
         private FunctionsFiles fl = new FunctionsFiles();
 
-        public DataTable Ishowfiles(string aluno)
+        public DataTable Ishowfiles(string disciplina, int aluno)
         {
-            return fl.showFiles(aluno);
+            return fl.showFiles(disciplina, aluno);
         }
     }
 }

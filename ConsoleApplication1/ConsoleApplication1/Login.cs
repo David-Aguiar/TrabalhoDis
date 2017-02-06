@@ -9,6 +9,7 @@ namespace ConsoleApplication1
     {
         private static string email, password;
         private static int count, result = 0;
+        public static bool correct = false;
 
         public static string iemail
         {
@@ -26,25 +27,31 @@ namespace ConsoleApplication1
             get { return result;}
             set { result = value; }
         }
-        public static void LoginAluno()
+        public static bool LoginAluno()
         {
-            if (email == "" || password  == "")
-            {
-                MessageBox.Show("Please provide UserName and Password");
-                return;
-            }
 
             DataTable DT = ComunicacaoBD.Instance.QueryLogin(email, password);
             count = DT.Rows.Count;
-            if (count == 1)
+
+            if (email == "" || password  == "")
             {
-                result = DT.Rows[0].Field<Int32>("id");
-                MessageBox.Show("Login Successful!");
+                MessageBox.Show("Please provide UserName and Password");
             }
             else
             {
-                MessageBox.Show("Login Failed!");
+                if (count == 1)
+                {
+                    result = DT.Rows[0].Field<Int32>("id");
+                    correct = true;
+                }
+                else
+                {
+                    MessageBox.Show("Login Failed!");
+                    correct = false;
+                }
             }
+
+            return correct;
         }
 
     }

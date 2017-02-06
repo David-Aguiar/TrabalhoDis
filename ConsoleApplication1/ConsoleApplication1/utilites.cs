@@ -32,11 +32,11 @@ namespace ConsoleApplication1
             }
         }
 
-        public void IgetPath(string _IdAluno)
+        public void IgetPath(string _Iddisciplina, int _Idaluno)
         {
-            if (!Directory.Exists(Inicialpath+_IdAluno)== true)
+            if (!Directory.Exists(Inicialpath + _Iddisciplina +"/"+ _Idaluno) == true)
             {
-                Directory.CreateDirectory(Inicialpath+_IdAluno);
+                Directory.CreateDirectory(Inicialpath+ _Iddisciplina + "/" + _Idaluno);
             }
         }
 

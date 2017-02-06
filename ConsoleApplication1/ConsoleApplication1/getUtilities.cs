@@ -26,9 +26,9 @@ namespace ConsoleApplication1
 
         private utilites ult = new utilites();
 
-        public void IcreateDirectory(string aluno)
+        public void IcreateDirectory(string disciplina, int idaluno)
         {
-            ult.IgetPath(aluno);
+            ult.IgetPath(disciplina, idaluno);
         }
     }
 }

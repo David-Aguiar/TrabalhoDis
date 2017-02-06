@@ -30,7 +30,6 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.selectforder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,17 +55,6 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // selectforder
-            // 
-            this.selectforder.AutoSize = true;
-            this.selectforder.Location = new System.Drawing.Point(12, 12);
-            this.selectforder.Name = "selectforder";
-            this.selectforder.Size = new System.Drawing.Size(105, 23);
-            this.selectforder.TabIndex = 2;
-            this.selectforder.Text = "Select Main Folder";
-            this.selectforder.UseVisualStyleBackColor = true;
-            //this.selectforder.Click += new System.EventHandler(this.selectforder_Click);
-            // 
             // MainFormStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -74,13 +62,11 @@
             this.ClientSize = new System.Drawing.Size(740, 344);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.selectforder);
             this.Name = "MainFormStudent";
             this.Text = "MainFormStudent";
             this.Load += new System.EventHandler(this.MainFormStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -88,6 +74,5 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button selectforder;
     }
 }

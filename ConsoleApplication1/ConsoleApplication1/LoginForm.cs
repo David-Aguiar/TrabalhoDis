@@ -10,6 +10,7 @@ namespace ConsoleApplication1
     public partial class LoginForm : Form
     {
         public static string passtext;
+        private static MainFormStudent mfs = new MainFormStudent();
 
         public LoginForm()
         {
@@ -23,16 +24,15 @@ namespace ConsoleApplication1
             Login.iemail = textBox1.Text;
             Login.ipassword = textBox2.Text;
             Login.LoginAluno();
-            MainFormStudent mfs = new MainFormStudent();
-            this.Hide();
-            mfs.Show();
+            if(Login.correct == true)
+            {
+                mfs.Show();
+                this.Hide();
+            }
         }
-    
-
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
         }
     }
 }

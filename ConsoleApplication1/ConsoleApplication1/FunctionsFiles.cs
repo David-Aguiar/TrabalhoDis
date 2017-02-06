@@ -7,26 +7,15 @@ namespace ConsoleApplication1
 {
     class FunctionsFiles
     {
-        public static string Inicialpath { get; private set; }
-        //public static string IgetCell { get; private set;  }
-
-        //private string Ifiles = @"D:\Documents\NovaPasta\";
-        //private string[] I_files = Directory.GetFiles(@"D:\Documents\NovaPasta\" + IgetCell);
-
         public FunctionsFiles()
         {
 
         }
 
-        public DataTable showFiles(string idaluno)
+        public DataTable showFiles(string _Iddisciplina, int _Idaluno)
         {
             DataTable itable = new DataTable();
-            Console.WriteLine("Ruben");
-            Console.WriteLine(utilites._Inicialpath);
-            Console.WriteLine("Ruben 2");
-            string[] I_files = Directory.GetFiles(utilites._Inicialpath +"/"+idaluno);
-            Console.WriteLine(I_files);
-            string teste = @"D:\Documents\NovaPasta\" + idaluno;
+            string[] I_files = Directory.GetFiles(utilites._Inicialpath + _Iddisciplina + "/" + _Idaluno);
             try
             {
 
@@ -41,7 +30,6 @@ namespace ConsoleApplication1
             {
                 MessageBox.Show("Erro ao Display dos files");
             }
-            Console.WriteLine(teste);
             return itable;
 
         }
