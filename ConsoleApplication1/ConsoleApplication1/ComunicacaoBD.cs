@@ -51,5 +51,16 @@ namespace ConsoleApplication1
 		//	return BD.Query("SELECT "+coluna+" FROM "+tabela+" WHERE ID="+id);
 		//}
 		
+        public void Insere(String Tabela, String Colunas, String Valores)
+        {
+            BD.Query("INSERT INTO "+Tabela+" ("+Colunas+") VALUES ("+Valores+")");
+        }
+
+        // Fazer query para ir buscar os trabalhos da disciplina correcta
+
+        public DataTable Trabalhos_Disciplina(int utilizador, int disciplina)
+        {
+            return BD.Query("Select trabalhos_utilizador.path_file From trabalhos_utilizador inner join trabalhos Where trabalhos_utilizador.utilizador_id = "+utilizador+" and trabalhos.disciplinas_id = "+disciplina+"");
+        }
 	}
 }
