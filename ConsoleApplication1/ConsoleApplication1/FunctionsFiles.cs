@@ -7,7 +7,7 @@ namespace ConsoleApplication1
 {
     class FunctionsFiles
     {
-        public static string Inicialpath { get; private set; }
+        public static string Inicialpath { get; }
         //public static string IgetCell { get; private set;  }
 
         //private string Ifiles = @"D:\Documents\NovaPasta\";
@@ -21,7 +21,7 @@ namespace ConsoleApplication1
         public DataTable showFiles(string idaluno)
         {
             DataTable itable = new DataTable();
-            string[] I_files = Directory.GetFiles(@"D:\Documents\NovaPasta\" + idaluno);
+            string[] I_files = Directory.GetFiles(Inicialpath + @"\NovaPasta\" + @"\"+ idaluno);
             string teste = @"D:\Documents\NovaPasta\" + idaluno;
             try
             {

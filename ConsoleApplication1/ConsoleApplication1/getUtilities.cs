@@ -11,7 +11,6 @@ namespace ConsoleApplication1
     class getUtilities
     {
         private static getUtilities instance;
-        public string Inicialpath { get; private set; }
         private getUtilities() { }
         public static getUtilities Instance
         {

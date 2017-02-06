@@ -50,7 +50,8 @@ namespace ConsoleApplication1
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.DataSource = ComunicacaoBD.Instance.QueryInnerJoin(Login.iresult);
-            dataGridView1.Columns[1].Visible = false;        
+            dataGridView1.Columns[1].Visible = false;
+            Console.WriteLine(Inicialpath);     
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

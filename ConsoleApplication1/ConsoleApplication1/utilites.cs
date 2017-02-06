@@ -10,7 +10,7 @@ namespace ConsoleApplication1
 {
     public class utilites
     {
-        private string Inicialpath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments)+"/NovaPasta/";
+        private string Inicialpath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments)+ @"\NovaPasta\";
 
         public utilites()
         {
