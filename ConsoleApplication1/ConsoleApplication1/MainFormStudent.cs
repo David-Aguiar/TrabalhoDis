@@ -59,7 +59,7 @@ namespace ConsoleApplication1
             {
                 getCell = dataGridView1.CurrentRow.Cells["id"].Value.ToString();
                 getUtilities.Instance.IcreateDirectory(getCell);
-                ifs.Show();
+                ifs.ShowDialog();
                 this.Hide();
             }
         }

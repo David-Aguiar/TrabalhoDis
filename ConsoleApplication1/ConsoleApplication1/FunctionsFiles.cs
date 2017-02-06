@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.IO;
 using System.Windows.Forms;
 
@@ -21,6 +22,7 @@ namespace ConsoleApplication1
         {
             DataTable itable = new DataTable();
             string[] I_files = Directory.GetFiles(@"D:\Documents\NovaPasta\" + idaluno);
+            string teste = @"D:\Documents\NovaPasta\" + idaluno;
             try
             {
                
@@ -35,9 +37,9 @@ namespace ConsoleApplication1
             {
                 MessageBox.Show("Erro ao Display dos files");
             }
-            //MessageBox.Show(testes);
+            Console.WriteLine(teste);
             return itable;
 
-        } 
+        }
     }
 }
