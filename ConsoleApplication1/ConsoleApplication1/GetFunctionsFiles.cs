@@ -30,5 +30,12 @@ namespace ConsoleApplication1
         {
             return fl.showFiles(disciplina, aluno);
         }
+
+        public void Istorefiles(string file, string _Iddisciplina, int _Idaluno)
+        {
+            fl.Store(file, _Iddisciplina, _Idaluno);
+        }
+
+
     }
 }

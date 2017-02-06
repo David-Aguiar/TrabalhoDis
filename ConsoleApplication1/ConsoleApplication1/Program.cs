@@ -9,6 +9,7 @@ namespace ConsoleApplication1
 {
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
                 Application.Run(new LoginForm());          

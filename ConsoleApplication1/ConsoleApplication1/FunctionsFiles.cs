@@ -33,5 +33,11 @@ namespace ConsoleApplication1
             return itable;
 
         }
+
+        public void Store(string file, string _Iddisciplina, int _Idaluno)
+        {
+            string destination = utilites._Inicialpath + _Iddisciplina + "/" + _Idaluno;
+            File.Copy(file, Path.Combine(destination, Path.GetFileName(file)));
+        }
     }
 }
