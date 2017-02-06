@@ -21,18 +21,19 @@ namespace ConsoleApplication1
             //dataGridView1.RowHeadersVisible = false;
             //dataGridView1.AllowUserToAddRows = false;
             //dataGridView1.DataSource = GetFunctionsFiles.Instance.Ishowfiles(MainFormStudent.IgetCell, Login.iresult);
-            if (refresh == 1)
-            {
+            //if (refresh == 1)
+            //{
                 DataTable DT = GetFunctionsFiles.Instance.Ishowfiles(MainFormStudent.IgetCell, Login.iresult);
                 foreach (DataRow row in DT.Rows)
                 {
                     listBox1.Items.Add(row[0]);
                 }
-                refresh = 0;
-            }
+            //    refresh = 0;
+            //}
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            //dataGridView1.DataBindings.Clear();
             listBox1.Items.Clear();
             this.Close();
             mfs.Show();
