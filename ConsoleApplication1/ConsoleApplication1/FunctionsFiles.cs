@@ -7,6 +7,7 @@ namespace ConsoleApplication1
 {
     class FunctionsFiles
     {
+        ItensFrame its =  new ItensFrame();
         public FunctionsFiles()
         {
 

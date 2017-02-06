@@ -34,8 +34,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.LoginStateIcon = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.LoginStateIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -90,22 +88,12 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // LoginStateIcon
-            // 
-            this.LoginStateIcon.Location = new System.Drawing.Point(367, 12);
-            this.LoginStateIcon.Name = "LoginStateIcon";
-            this.LoginStateIcon.Size = new System.Drawing.Size(58, 33);
-            this.LoginStateIcon.TabIndex = 0;
-            this.LoginStateIcon.TabStop = false;
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(437, 251);
-            this.ControlBox = false;
-            this.Controls.Add(this.LoginStateIcon);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
@@ -115,7 +103,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "LoginForm";
             this.Text = "LongiForm";
-            ((System.ComponentModel.ISupportInitialize)(this.LoginStateIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,7 +114,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox LoginStateIcon;
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.TextBox textBox2;
     }
