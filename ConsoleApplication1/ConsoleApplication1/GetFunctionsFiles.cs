@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,9 +26,9 @@ namespace ConsoleApplication1
         }
         private FunctionsFiles fl = new FunctionsFiles();
 
-        public void Ishowfiles()
+        public DataTable Ishowfiles(string aluno)
         {
-            fl.showFiles();
+            return fl.showFiles(aluno);
         }
     }
 }

@@ -52,22 +52,6 @@ namespace ConsoleApplication1
             dataGridView1.DataSource = ComunicacaoBD.Instance.QueryInnerJoin(Login.iresult);
             dataGridView1.Columns[1].Visible = false;        
         }
-        //private void selectforder_Click(object sender, EventArgs e)
-        //{
-        //        FolderBrowserDialog fbd = new FolderBrowserDialog();
-        //        fbd.RootFolder = Environment.SpecialFolder.Desktop;
-        //        fbd.Description = "Selecione Pasta";
-        //        fbd.ShowNewFolderButton = true;
-        //    if (fbd.ShowDialog() == DialogResult.OK)
-        //    {
-        //        ult.Igetpath = fbd.SelectedPath;
-        //        MessageBox.Show(ult.Igetpath);
-        //    }
-        //    else
-        //    {
-        //        selectforder.Enabled = false;
-        //    }
-        //}
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
