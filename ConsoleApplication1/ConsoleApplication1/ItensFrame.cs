@@ -33,7 +33,7 @@ namespace ConsoleApplication1
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataBindings.Clear();
+            listBox1.Items.Clear();
             this.Close();
             mfs.Show();
         }
