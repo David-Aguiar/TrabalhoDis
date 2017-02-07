@@ -26,11 +26,12 @@ namespace ConsoleApplication1
         }
         private FunctionsFiles fl = new FunctionsFiles();
 
+        //chamada da função showfiles
         public DataTable Ishowfiles(string disciplina, int aluno)
         {
             return fl.showFiles(disciplina, aluno);
         }
-
+        //chamada da função store
         public void Istorefiles(string file, string _Iddisciplina, int _Idaluno)
         {
             fl.Store(file, _Iddisciplina, _Idaluno);

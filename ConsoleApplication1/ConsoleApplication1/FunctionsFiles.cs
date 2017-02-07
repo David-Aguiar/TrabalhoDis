@@ -12,7 +12,7 @@ namespace ConsoleApplication1
         {
 
         }
-
+        //Display dos files, nas pastas das disciplinas
         public DataTable showFiles(string _Iddisciplina, int _Idaluno)
         {
             DataTable itable = new DataTable();
@@ -34,7 +34,7 @@ namespace ConsoleApplication1
             return itable;
 
         }
-
+        //guardar o path dos files
         public void Store(string file, string _Iddisciplina, int _Idaluno)
         {
             string destination = utilites._Inicialpath + _Iddisciplina + "/" + _Idaluno;
