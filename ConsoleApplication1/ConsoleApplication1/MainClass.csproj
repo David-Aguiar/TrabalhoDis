@@ -96,6 +96,7 @@
     <Compile Include="MainFormStudent.Designer.cs">
       <DependentUpon>MainFormStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="OpenFiles.cs" />
     <Compile Include="ProfDisciplinasScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +117,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="utilites.cs" />
+    <Compile Include="_OpenFIles.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
