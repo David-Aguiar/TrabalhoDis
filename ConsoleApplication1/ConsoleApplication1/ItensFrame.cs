@@ -138,7 +138,7 @@ namespace ConsoleApplication1
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            //
         }
     }
 }
