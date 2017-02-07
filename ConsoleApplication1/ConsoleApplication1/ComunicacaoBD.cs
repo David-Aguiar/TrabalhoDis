@@ -82,5 +82,10 @@ namespace ConsoleApplication1
         {
             BD.Query("DELETE FROM trabalhos WHERE trabalhos.id = " + idtrabalho);
         }
+
+        public DataTable getTrabalhosProf()
+        {
+            return BD.Query("Select trabalhos_utilizador.utilizador_id, trabalhos_utilizador.data_entrega, trabalhos_utilizador.path_file  From trabalhos_utilizador");
+        }
     }
 }

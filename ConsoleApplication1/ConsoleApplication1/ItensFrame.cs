@@ -121,20 +121,5 @@ namespace ConsoleApplication1
                 e.Effect = DragDropEffects.All;
             }
         }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //
-        }
     }
 }

@@ -14,7 +14,8 @@ namespace ConsoleApplication1
     {
         private static ProfScreen ps = new ProfScreen();
         private static FormularioTrabalho ft = new FormularioTrabalho();
-        private static int idtrabalho; 
+        private static int idtrabalho;
+        private static string pathtrabalho;
 
         public ProfDisciplinasScreen()
         {
@@ -37,6 +38,11 @@ namespace ConsoleApplication1
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.DataSource = ComunicacaoBD.Instance.gettrabalhos(Login.iresult);
             dataGridView1.Columns[3].Visible = false;
+
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.RowHeadersVisible = false;
+            dataGridView2.DataSource = ComunicacaoBD.Instance.getTrabalhosProf();
+            dataGridView2.Columns[2].Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -63,6 +69,15 @@ namespace ConsoleApplication1
             {
                 ComunicacaoBD.Instance.DeleteTrabalho(idtrabalho);
                 dataGridView1.DataSource = ComunicacaoBD.Instance.gettrabalhos(Login.iresult);
+            }
+        }
+
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                pathtrabalho = dataGridView2.CurrentRow.Cells["path_file"].Value.ToString();
+                Console.WriteLine(pathtrabalho);
             }
         }
     }
