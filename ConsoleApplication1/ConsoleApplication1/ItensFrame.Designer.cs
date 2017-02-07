@@ -109,6 +109,8 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 325);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
@@ -119,6 +121,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(589, 217);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.MultiSelectChanged += new System.EventHandler(this.button1_Click);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // checkBox1
             // 

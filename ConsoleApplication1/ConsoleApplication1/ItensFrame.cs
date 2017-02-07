@@ -8,7 +8,7 @@ namespace ConsoleApplication1
 {
     public partial class ItensFrame : Form
     {
-
+        DataGridViewRow[] old;
         private MainFormStudent mfs = new MainFormStudent();
         public ItensFrame()
         {
@@ -158,6 +158,16 @@ namespace ConsoleApplication1
         {
             //
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            Console.WriteLine("clicked");
+            dataGridView1.CurrentCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            dataGridView1.Rows[e.RowIndex].Selected = true;
+            dataGridView1.Focus();
+        }
+
 
     }
 }
