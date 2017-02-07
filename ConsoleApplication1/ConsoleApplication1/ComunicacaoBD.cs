@@ -46,11 +46,16 @@ namespace ConsoleApplication1
 			return BD.Query("SELECT id, email, password, tipo_utilizador_id FROM utilizador WHERE email='"+email+"' AND password='"+password+"'");
 		}
 		
-		//public DataTable QueryGeral(String tabela, String coluna, int id)
-		//{
-		//	return BD.Query("SELECT "+coluna+" FROM "+tabela+" WHERE ID="+id);
-		//}
-		
+		public DataTable QueryGeral(String tabela, String coluna, int id)
+		{
+			return BD.Query("SELECT "+coluna+" FROM "+tabela+" WHERE ID="+id);
+		}
+
+        public DataTable QueryTrabalhos(String tabela, String coluna1, String coluna2, string id)
+        {
+            return BD.Query("SELECT " + coluna1 + " FROM " + tabela + " WHERE "+ coluna2 +"=" + id);
+        }
+
         public void Insere(String Tabela, String Colunas, String Valores)
         {
             BD.Query("INSERT INTO "+Tabela+" ("+Colunas+") VALUES ("+Valores+")");

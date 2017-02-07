@@ -37,6 +37,11 @@ namespace ConsoleApplication1
             fl.Store(file, _Iddisciplina, _Idaluno);
         }
 
+        public bool Iexists (string file, string _Iddisciplina, int _Idaluno)
+        {
+            return fl.Exists(file, _Iddisciplina, _Idaluno);
+        }
+
 
     }
 }
