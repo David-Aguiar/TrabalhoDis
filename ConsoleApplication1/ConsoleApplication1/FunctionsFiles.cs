@@ -49,6 +49,7 @@ namespace ConsoleApplication1
         {
             string destination = utilites._Inicialpath + _Iddisciplina + "/" + _Idaluno;
             file_path = destination + "/" + Path.GetFileName(file);
+            Console.WriteLine(file_path);
             if (!File.Exists(file_path))
             {
                 File.Copy(file, Path.Combine(destination, Path.GetFileName(file)));

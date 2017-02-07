@@ -116,7 +116,9 @@ namespace ConsoleApplication1
                         int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
                         DataGridViewRow selectedRow = dataGridView2.Rows[selectedrowindex];
                         string trabalho_id = Convert.ToString(selectedRow.Cells["id"].Value);
-                        string valores = "NULL, '" + trabalho_id + "', '" + Login.iresult + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "', '"+GetFunctionsFiles.Instance.Ifilepath()+"'";
+                        string path = GetFunctionsFiles.Instance.Ifilepath();
+                        string escapedPath = path.Replace(@"\", @"\\").Replace("'", @"\'");
+                        string valores = "NULL, '" + trabalho_id + "', '" + Login.iresult + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "', '"+escapedPath+"'";
                         ComunicacaoBD.Instance.Insere("trabalhos_utilizador", colunas, valores);
                     }
                     else
@@ -140,5 +142,21 @@ namespace ConsoleApplication1
                 e.Effect = DragDropEffects.All;
             }
         }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //
+        }
+
     }
 }
