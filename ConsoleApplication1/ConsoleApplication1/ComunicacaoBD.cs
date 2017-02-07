@@ -70,7 +70,7 @@ namespace ConsoleApplication1
         //query para obter os trabalhos 
         public DataTable gettrabalhos(int disciplina)
         {
-            return BD.Query("Select trabalhos.descricao, trabalhos.data_inicio_entrega, trabalhos.data_fim_entrega From trabalhos Where trabalhos.disciplinas_id = " + disciplina + "");
+            return BD.Query("Select trabalhos.descricao, trabalhos.data_inicio_entrega, trabalhos.data_fim_entrega, trabalhos.id From trabalhos Where trabalhos.disciplinas_id = " + disciplina + "");
         }
         //query para inserir novos os trabalhos
         public void InsereDataTrabalho(string Idescricao, string dataInicio, string datafim, int idisciplina)
@@ -78,6 +78,9 @@ namespace ConsoleApplication1
             BD.Query("Insert Into trabalhos (descricao, data_inicio_entrega, data_fim_entrega, disciplinas_id) Values ('" + Idescricao+"','"+ dataInicio +"', '"+ datafim +"', '"+ idisciplina+"')");
         }
 
-    //    public void DeleteTrabalho()
+         public void DeleteTrabalho(int idtrabalho)
+        {
+            BD.Query("DELETE FROM trabalhos WHERE trabalhos.id = " + idtrabalho);
+        }
     }
 }
