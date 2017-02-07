@@ -78,6 +78,7 @@ namespace ConsoleApplication1
             {
                 pathtrabalho = dataGridView2.CurrentRow.Cells["path_file"].Value.ToString();
                 Console.WriteLine(pathtrabalho);
+                _OpenFIles.Instance.NotRead(pathtrabalho);
             }
         }
     }
