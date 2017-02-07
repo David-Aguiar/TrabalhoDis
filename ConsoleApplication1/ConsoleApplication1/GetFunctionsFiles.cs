@@ -42,6 +42,11 @@ namespace ConsoleApplication1
             return fl.Exists(file, _Iddisciplina, _Idaluno);
         }
 
+        public string Ifilepath()
+        {
+            return fl.filePath;
+        }
+
 
     }
 }

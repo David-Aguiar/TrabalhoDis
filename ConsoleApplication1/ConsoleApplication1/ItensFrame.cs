@@ -31,14 +31,12 @@ namespace ConsoleApplication1
 
             //    }
             DataTable DT2 = ComunicacaoBD.Instance.QueryTrabalhos("trabalhos", "*", "disciplinas_id", MainFormStudent.IgetCell);
-            DT2.Columns.Add(new DataColumn("Selected", typeof(bool)));
             dataGridView2.DataSource = DT2;
-            dataGridView2.Columns["Selected"].DisplayIndex = 0;
             dataGridView2.RowHeadersVisible = false;
-            dataGridView2.Columns[0].Visible = false;
             dataGridView2.Columns[2].Visible = false;
             dataGridView2.Columns[4].Visible = false;
             dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.Rows[0].Selected = false;
 
         }
 
@@ -67,16 +65,14 @@ namespace ConsoleApplication1
 
         private bool isAnySelected(DataGridView datagrid)
         {
-            foreach(DataGridViewRow row in datagrid.Rows)
+            if(datagrid.SelectedRows.Count > 0)
             {
-                DataGridViewCheckBoxCell cbxCell = row.Cells[0] as DataGridViewCheckBoxCell;
-                if(cbxCell != null && (bool)cbxCell.Value==true)
-                {
-                    return true;
-                }
-
+                return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
         }
 
         private void listBox1_DragDrop(object sender, DragEventArgs e)
@@ -98,13 +94,11 @@ namespace ConsoleApplication1
                         MessageBox.Show("Ficheiro largado " + filename);
                         listBox1.Items.Add(filename);
                         GetFunctionsFiles.Instance.Istorefiles(file, MainFormStudent.IgetCell, Login.iresult);
-                        //foreach(object item in dataGridView2.CheckedItems)
-                        //{
-                        //    string temp = item.ToString();
-                        //    Console.WriteLine(temp);
-                        //}
-                        //String valores = "'NULL', ";
-                        //ComunicacaoBD.Instance.Insere("trabalhos_utilizador", colunas, );
+                        int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
+                        DataGridViewRow selectedRow = dataGridView2.Rows[selectedrowindex];
+                        string trabalho_id = Convert.ToString(selectedRow.Cells["id"].Value);
+                        string valores = "NULL, '" + trabalho_id + "', '" + Login.iresult + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "', '"+GetFunctionsFiles.Instance.Ifilepath()+"'";
+                        ComunicacaoBD.Instance.Insere("trabalhos_utilizador", colunas, valores);
                     }
                     else
                     {
@@ -115,6 +109,8 @@ namespace ConsoleApplication1
             else
             {
                 e.Effect = DragDropEffects.None;
+                MessageBox.Show("Por favor, selecione um trabalho a entregar antes de arrastar o ficheiro");
+                
             }
         }
 
