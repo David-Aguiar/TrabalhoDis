@@ -17,27 +17,46 @@ namespace ConsoleApplication1
 
         private void ItensFrame_Load(object sender, EventArgs e)
         {
-                DataTable DT = GetFunctionsFiles.Instance.Ishowfiles(MainFormStudent.IgetCell, Login.iresult);
-                foreach (DataRow row in DT.Rows)
-                {
-                    listBox1.Items.Add(row[0]);
-                }
+            fillListBox();
+            fillDataGridView2();
+            fillDataGridView1();
+        }
 
-            //checkedListBox1.Items.Clear();
-            //    DataTable DT2 = ComunicacaoBD.Instance.QueryTrabalhos("trabalhos", "*", "disciplinas_id", MainFormStudent.IgetCell);
-            //    foreach (DataRow row2 in DT2.Rows)
-            //    {
-            //        checkedListBox1.Items.Add(row2[2]);
+        private void fillListBox()
+        {
+            DataTable DT = GetFunctionsFiles.Instance.Ishowfiles(MainFormStudent.IgetCell, Login.iresult);
+            foreach (DataRow row in DT.Rows)
+            {
+                listBox1.Items.Add(row[0]);
+            }
+        }
 
-            //    }
+        private void fillDataGridView2()
+        {
             DataTable DT2 = ComunicacaoBD.Instance.QueryTrabalhos("trabalhos", "*", "disciplinas_id", MainFormStudent.IgetCell);
-            dataGridView2.DataSource = DT2;
-            dataGridView2.RowHeadersVisible = false;
-            dataGridView2.Columns[2].Visible = false;
-            dataGridView2.Columns[4].Visible = false;
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.Rows[0].Selected = false;
+            dataGridView2.DataSource = null;
+            if (DT2.Rows.Count > 0)
+            {
+                dataGridView2.DataSource = DT2;
+                dataGridView2.RowHeadersVisible = false;
+                dataGridView2.Columns[2].Visible = false;
+                dataGridView2.Columns[4].Visible = false;
+                dataGridView2.AllowUserToAddRows = false;
+                dataGridView2.Rows[0].Selected = false;
+            }
+        }
 
+        private void fillDataGridView1()
+        {
+            DataTable DT3 = ComunicacaoBD.Instance.QueryAlunos(Login.iresult, MainFormStudent.IgetCell);
+            dataGridView1.DataSource = null;
+            if (DT3.Rows.Count > 0)
+            {
+                dataGridView1.DataSource = DT3;
+                dataGridView1.RowHeadersVisible = false;
+                dataGridView1.AllowUserToAddRows = false;
+                dataGridView1.Rows[0].Selected = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -136,5 +155,6 @@ namespace ConsoleApplication1
         {
             //
         }
+
     }
 }

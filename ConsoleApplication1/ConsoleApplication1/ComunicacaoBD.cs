@@ -82,5 +82,10 @@ namespace ConsoleApplication1
         {
             BD.Query("DELETE FROM trabalhos WHERE trabalhos.id = " + idtrabalho);
         }
+
+        public DataTable QueryAlunos(int id_aluno,string disciplina)
+        {
+            return BD.Query("SELECT utilizador.id, utilizador.nome FROM utilizador INNER JOIN utilizador_disciplinas WHERE utilizador_disciplinas.id=" + disciplina + " AND utilizador.tipo_utilizador_id='2' AND utilizador.id!="+id_aluno+"");
+        }
     }
 }
