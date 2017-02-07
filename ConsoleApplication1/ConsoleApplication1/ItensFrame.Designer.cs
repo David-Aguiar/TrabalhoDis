@@ -118,6 +118,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(589, 217);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.MultiSelectChanged += new System.EventHandler(this.button1_Click);
             // 
             // checkBox1
             // 

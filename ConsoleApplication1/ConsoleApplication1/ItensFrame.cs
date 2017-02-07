@@ -135,6 +135,7 @@ namespace ConsoleApplication1
             }
         }
 
+
         private void listBox1_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop, false) == true)
