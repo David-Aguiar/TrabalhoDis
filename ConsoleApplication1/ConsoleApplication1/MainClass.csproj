@@ -66,6 +66,12 @@
     <Compile Include="comunicaBD.cs" />
     <Compile Include="ComunicacaoBD.cs" />
     <Compile Include="Conection.cs" />
+    <Compile Include="FormularioTrabalho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioTrabalho.Designer.cs">
+      <DependentUpon>FormularioTrabalho.cs</DependentUpon>
+    </Compile>
     <Compile Include="FunctionsFiles.cs" />
     <Compile Include="GetFunctionsFiles.cs" />
     <Compile Include="getUtilities.cs" />
@@ -89,6 +95,18 @@
     </Compile>
     <Compile Include="MainFormStudent.Designer.cs">
       <DependentUpon>MainFormStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfDisciplinasScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfDisciplinasScreen.Designer.cs">
+      <DependentUpon>ProfDisciplinasScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfScreen.Designer.cs">
+      <DependentUpon>ProfScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +133,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormularioTrabalho.resx">
+      <DependentUpon>FormularioTrabalho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ItensFrame.resx">
       <DependentUpon>ItensFrame.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +144,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainFormStudent.resx">
       <DependentUpon>MainFormStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfDisciplinasScreen.resx">
+      <DependentUpon>ProfDisciplinasScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfScreen.resx">
+      <DependentUpon>ProfScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

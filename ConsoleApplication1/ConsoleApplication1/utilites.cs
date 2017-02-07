@@ -21,6 +21,7 @@ namespace ConsoleApplication1
         {
             try
             {
+                //criação do folder principal
                 if (!Directory.Exists(Inicialpath))
                 {
                     Directory.CreateDirectory(Inicialpath);
@@ -31,7 +32,7 @@ namespace ConsoleApplication1
                 MessageBox.Show("Problema ao criar a pasta");
             }
         }
-
+        // função para criar os folder das disciplinas + dos alunos;
         public void IgetPath(string _Iddisciplina, int _Idaluno)
         {
             if (!Directory.Exists(Inicialpath + _Iddisciplina +"/"+ _Idaluno) == true)

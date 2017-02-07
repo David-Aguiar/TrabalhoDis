@@ -27,6 +27,7 @@ namespace ConsoleApplication1
             get { return result;}
             set { result = value; }
         }
+        //verificação se o utilizador colocou alguma informação nas textbox, obtençao do id do utilizador (id == 1, docente; id == 2, aluno)
         public static bool LoginAluno()
         {
 
