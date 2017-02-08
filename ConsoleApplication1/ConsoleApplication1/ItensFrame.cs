@@ -151,7 +151,7 @@ namespace ConsoleApplication1
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            //
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
