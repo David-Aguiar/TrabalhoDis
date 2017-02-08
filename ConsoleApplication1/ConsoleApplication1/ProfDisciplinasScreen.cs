@@ -12,9 +12,9 @@ namespace ConsoleApplication1
 {
     public partial class ProfDisciplinasScreen : Form
     {
-        private static ProfScreen ps = new ProfScreen();
-        private static FormularioTrabalho ft = new FormularioTrabalho();
-        private static valuesgridview vgv = new valuesgridview();
+        private ProfScreen ps = new ProfScreen();
+        private FormularioTrabalho ft = new FormularioTrabalho();
+        private valuesgridview vgv = new valuesgridview();
 
         public ProfDisciplinasScreen()
         {
@@ -25,7 +25,6 @@ namespace ConsoleApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             ft.Show();
-            this.Hide();
         }
 
         private void ProfDisciplinasScreen_Load(object sender, EventArgs e)
@@ -35,7 +34,7 @@ namespace ConsoleApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             ps.Show();
         }
 
@@ -52,11 +51,7 @@ namespace ConsoleApplication1
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             vgv.OpenFiles(dataGridView2, e);
-            //if (dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-            //{
-            //    pathtrabalho = dataGridView2.CurrentRow.Cells["path_file"].Value.ToString();
-            //    _OpenFIles.Instance.NotRead(pathtrabalho);
-            //}
         }
+        
     }
 }

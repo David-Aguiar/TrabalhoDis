@@ -23,7 +23,10 @@ namespace ConsoleApplication1
             get { return idtrabalho; }
             set { idtrabalho = value; }
         }
-
+        internal void updatequery(DataGridView dataGridView1)
+        {
+            dataGridView1.DataSource = ComunicacaoBD.Instance.gettrabalhos(Login.iresult);
+        }
         internal void GetdataGrid(DataGridView dataGridView1)
         {
             dataGridView1.AllowUserToAddRows = false;

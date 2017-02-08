@@ -12,7 +12,6 @@ namespace ConsoleApplication1
 {
     public partial class FormularioTrabalho : Form
     {
-        private ProfDisciplinasScreen pds = new ProfDisciplinasScreen();
 
         public FormularioTrabalho()
         {
@@ -23,7 +22,6 @@ namespace ConsoleApplication1
         {
             ComunicacaoBD.Instance.InsereDataTrabalho(this.textBox1.Text, this.dateTimePicker1.Text, this.dateTimePicker2.Text , Convert.ToInt32(ProfScreen.IgetCellProf));
             this.Hide();
-            pds.Show();
         }
     }
 }
