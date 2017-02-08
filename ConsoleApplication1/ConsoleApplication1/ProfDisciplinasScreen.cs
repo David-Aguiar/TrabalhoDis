@@ -14,6 +14,7 @@ namespace ConsoleApplication1
     {
         private static ProfScreen ps = new ProfScreen();
         private static FormularioTrabalho ft = new FormularioTrabalho();
+        private static valuesgridview vgv = new valuesgridview();
         private static int idtrabalho;
         private static string pathtrabalho;
 
@@ -26,6 +27,8 @@ namespace ConsoleApplication1
             get { return idtrabalho; }
             set { idtrabalho = value; }
         }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             ft.Show();
@@ -34,15 +37,13 @@ namespace ConsoleApplication1
 
         private void ProfDisciplinasScreen_Load(object sender, EventArgs e)
         {
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.DataSource = ComunicacaoBD.Instance.gettrabalhos(Login.iresult);
-            dataGridView1.Columns[3].Visible = false;
+            vgv.GetdataGrid(dataGridView1);
+            vgv.GetdataGrid2(dataGridView2);
+            ////dataGridView2.AllowUserToAddRows = false;
+            //dataGridView2.RowHeadersVisible = false;
+            //dataGridView2.Columns[2].Visible = false;
 
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.RowHeadersVisible = false;
-            dataGridView2.DataSource = ComunicacaoBD.Instance.getTrabalhosProf();
-            dataGridView2.Columns[2].Visible = false;
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -57,6 +58,15 @@ namespace ConsoleApplication1
             {
                 idtrabalho = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id"].Value.ToString());
             }
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (this.dataGridView1.SelectedRows.Count == 1)
+                {
+                    dataGridView2.DataSource = ComunicacaoBD.Instance.getTrabalhosProf(idtrabalho);
+                }
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
