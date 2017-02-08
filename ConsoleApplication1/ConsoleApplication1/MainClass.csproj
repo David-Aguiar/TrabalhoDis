@@ -66,6 +66,7 @@
     <Compile Include="comunicaBD.cs" />
     <Compile Include="ComunicacaoBD.cs" />
     <Compile Include="Conection.cs" />
+    <Compile Include="Entrega.cs" />
     <Compile Include="FormularioTrabalho.cs">
       <SubType>Form</SubType>
     </Compile>
