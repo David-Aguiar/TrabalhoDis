@@ -9,6 +9,8 @@ namespace ConsoleApplication1
     public partial class ItensFrame : Form
     {
         private MainFormStudent mfs = new MainFormStudent();
+        private static Entrega entrega = new Entrega();
+
         public ItensFrame()
         {
             InitializeComponent();
@@ -65,12 +67,6 @@ namespace ConsoleApplication1
             mfs.Show();
         }
 
-        //Get file name
-        private string getFileName(string path)
-        {
-            return Path.GetFileNameWithoutExtension(path);
-        }
-
         private bool isAnySelected(DataGridView datagrid)
         {
             if(datagrid.SelectedRows.Count > 0)
@@ -85,42 +81,14 @@ namespace ConsoleApplication1
 
         private void listBox1_DragDrop(object sender, DragEventArgs e)
         {
-
-            //bool isAnySelected = checkedListBox1.SelectedIndex != -1;
-            Console.WriteLine(isAnySelected(dataGridView2));
             if (isAnySelected(dataGridView2) == true)
             {
-                //Take dropped items and store in array
-                String[] droppedFiles = (String[])e.Data.GetData(DataFormats.FileDrop);
-                String colunas = "id, trabalhos_id, utilizador_id, data_entrega, path_file";
-                //LOOP THROUGH ITEMS AND DISPLAY THEM
-                foreach (String file in droppedFiles)
-                {
-                    String filename = getFileName(file);
-                    if (!GetFunctionsFiles.Instance.Iexists(file, MainFormStudent.IgetCell, Login.iresult))
-                    {
-                        MessageBox.Show("Ficheiro largado " + filename);
-                        listBox1.Items.Add(filename);
-                        GetFunctionsFiles.Instance.Istorefiles(file, MainFormStudent.IgetCell, Login.iresult);
-                        int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
-                        DataGridViewRow selectedRow = dataGridView2.Rows[selectedrowindex];
-                        string trabalho_id = Convert.ToString(selectedRow.Cells["id"].Value);
-                        string path = GetFunctionsFiles.Instance.Ifilepath();
-                        string escapedPath = path.Replace(@"\", @"\\").Replace("'", @"\'");
-                        string valores = "NULL, '" + trabalho_id + "', '" + Login.iresult + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "', '"+escapedPath+"'";
-                        ComunicacaoBD.Instance.Insere("trabalhos_utilizador", colunas, valores);
-                    }
-                    else
-                    {
-                        MessageBox.Show("O ficheiro " + filename + " já existe.");
-                    }
-                }
+                entrega.GetDataGrid2(dataGridView2, e, listBox1);
             }
             else
             {
                 e.Effect = DragDropEffects.None;
                 MessageBox.Show("Por favor, selecione um trabalho a entregar antes de arrastar o ficheiro");
-                
             }
         }
 
@@ -135,7 +103,6 @@ namespace ConsoleApplication1
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             Console.WriteLine("clicked");
             dataGridView1.CurrentCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
             dataGridView1.Rows[e.RowIndex].Selected = true;
