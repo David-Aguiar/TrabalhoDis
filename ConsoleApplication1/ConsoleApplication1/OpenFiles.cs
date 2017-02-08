@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Office.Interop.Word;
+using System.Diagnostics;
+using System.IO;
 
 namespace ConsoleApplication1
 {
@@ -12,20 +14,30 @@ namespace ConsoleApplication1
         public OpenFiles(){}
 
         Application application = new Application();
+        object objMissing = System.Reflection.Missing.Value;
 
-        public void OpFilesNotRead(string path)
+
+        //abrir ficheiro só em modo de leitura
+        public void OpFilesNotwrite(string path)
         {
-            Document docNR = application.Documents.Open(path, true);
-            application.Visible = true;
-            docNR.Activate();
-            docNR.Close();
+            //Document docNR = application.Documents.Open(path, ref objMissing, true, ref objMissing, ref objMissing, ref objMissing,
+            //    ref objMissing, ref objMissing, ref objMissing, ref objMissing, ref objMissing,
+            //    ref objMissing, ref objMissing, ref objMissing, ref objMissing, ref objMissing);
+            //application.Quit();
+
+            FileInfo finfo = new FileInfo(path);
+            finfo.Attributes = FileAttributes.ReadOnly;
+            Process.Start(path);
         }
 
-        public void OpFilesRead(string path)
+        //abrir os ficheiros
+        public void OpFileswrite(string path)
         {
-            Document docR = application.Documents.Open(path);
-            application.Visible = true;
-            docR.Activate();
+            //Document docR = application.Documents.Open(path);
+            //application.Visible = true;
+            //docR.Activate();
+
+            Process.Start(path);
         }
     }
 }

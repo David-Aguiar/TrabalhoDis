@@ -24,16 +24,17 @@ namespace ConsoleApplication1
             }
         }
 
+        //chamada da função para abrir os ficheiros
         private OpenFiles of = new OpenFiles();
 
         public void OnlyRead(string path)
         {
-            of.OpFilesRead(path);
+            of.OpFileswrite(path);
         }
-
+        //chamada da função para abrir os ficheiros em modo de leitura
         public void NotRead(string path)
         {
-            of.OpFilesNotRead(path);
+            of.OpFilesNotwrite(path);
         }
     }
 }
