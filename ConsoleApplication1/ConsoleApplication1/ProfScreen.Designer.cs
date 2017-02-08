@@ -53,7 +53,6 @@
             this.Text = "ProfScreen";
             this.Load += new System.EventHandler(this.ProfScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
 
         }
 
