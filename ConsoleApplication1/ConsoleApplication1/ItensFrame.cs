@@ -83,7 +83,7 @@ namespace ConsoleApplication1
         {
             if (isAnySelected(dataGridView2) == true)
             {
-                entrega.GetDataGrid2(dataGridView2, e, listBox1);
+                entrega.GetDataGrid2(dataGridView2, e, listBox1, checkBox1, dataGridView2);
             }
             else
             {

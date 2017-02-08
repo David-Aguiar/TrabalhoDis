@@ -11,7 +11,7 @@ namespace ConsoleApplication1
 {
     class Entrega
     {
-        internal void GetDataGrid2(DataGridView dataGridView2, DragEventArgs e, ListBox listBox1)
+        internal void GetDataGrid2(DataGridView dataGridView2, DragEventArgs e, ListBox listBox1, CheckBox checkBox1, DataGridView dataGridView1)
         {
             //Take dropped items and store in array
             String[] droppedFiles = (String[])e.Data.GetData(DataFormats.FileDrop);
@@ -32,6 +32,23 @@ namespace ConsoleApplication1
                     string escapedPath = path.Replace(@"\", @"\\").Replace("'", @"\'");
                     string valores = "NULL, '" + trabalho_id + "', '" + Login.iresult + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "', '" + escapedPath + "'";
                     ComunicacaoBD.Instance.Insere("trabalhos_utilizador", colunas, valores);
+
+                    if(checkBox1.Checked)
+                    {
+                        if(dataGridView1.SelectedRows.Count > 0)
+                        {
+                            foreach(DataGridViewRow r in dataGridView1.SelectedRows)
+                            {
+                                string aluno2 = Convert.ToString(r.Cells["id"].Value);
+                                string valores2 = "NULL, '" + trabalho_id + "', '" + aluno2 + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "', '" + escapedPath + "'";
+                                ComunicacaoBD.Instance.Insere("trabalhos_utilizador", colunas, valores2);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Por favor seleccione o aluno com quem elaborou o trabalho");
+                        }
+                    }
                 }
                 else
                 {
