@@ -16,7 +16,7 @@ namespace ConsoleApplication1
             InitializeComponent();
         }
 
-        private utilites ult = new utilites();
+        
 
 
         private static int resultadoId = 0;
