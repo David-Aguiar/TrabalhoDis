@@ -8,7 +8,6 @@ namespace ConsoleApplication1
 {
     public partial class ItensFrame : Form
     {
-        DataGridViewRow[] old;
         private MainFormStudent mfs = new MainFormStudent();
         public ItensFrame()
         {
@@ -64,16 +63,6 @@ namespace ConsoleApplication1
             listBox1.Items.Clear();
             this.Close();
             mfs.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_DragDrop(object sender, DragEventArgs e)
-        {
- 
         }
 
         //Get file name
@@ -142,21 +131,6 @@ namespace ConsoleApplication1
             {
                 e.Effect = DragDropEffects.All;
             }
-        }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            //
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
